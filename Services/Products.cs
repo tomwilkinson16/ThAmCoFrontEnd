@@ -42,6 +42,7 @@ namespace ThAmCo.CheapestProduct.Services.CheapestProducts
 
             _httpclient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.AccessToken);
             var response = await _httpclient.GetAsync("debug/CheapestProducts");
+            
             var productcontextcontentString = await response.Content.ReadAsStringAsync();
             var products = JsonSerializer.Deserialize<IEnumerable<LowestProductDto>>(productcontextcontentString, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
