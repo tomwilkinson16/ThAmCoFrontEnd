@@ -1,6 +1,30 @@
+using Auth0.AspNetCore.Authentication;
+using ThAmCo.CheapestProduct.Services.CheapestProducts;
+using ThAmCo.CheapestProducts.Services.CheapestProduct;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllersWithViews();
+
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddScoped<ILowestPriceService, LowestPriceServiceFake>();
+}
+else
+{
+    builder.Services.AddHttpClient<ILowestPriceService, LowestProducts>(client =>
+    {
+        client.BaseAddress = new Uri(builder.Configuration["LowestProducts:Uri"]);
+    });
+}
+
+builder.Services.AddAuth0WebAppAuthentication(options =>
+{
+    options.Domain = builder.Configuration["Auth:Domain"];
+    options.ClientId = builder.Configuration["Auth:ClientId"];
+});
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -18,6 +42,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

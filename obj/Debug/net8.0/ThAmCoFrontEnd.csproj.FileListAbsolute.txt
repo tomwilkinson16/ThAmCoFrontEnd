@@ -28,3 +28,15 @@
 /Users/tom/Downloads/ThAmCoFrontEnd/obj/Debug/net8.0/ThAmCoFrontEnd.pdb
 /Users/tom/Downloads/ThAmCoFrontEnd/obj/Debug/net8.0/ThAmCoFrontEnd.genruntimeconfig.cache
 /Users/tom/Downloads/ThAmCoFrontEnd/obj/Debug/net8.0/ref/ThAmCoFrontEnd.dll
+/Users/tom/Downloads/ThAmCoFrontEnd/obj/Debug/net8.0/ThAmCoFrontEnd.sourcelink.json
+/Users/tom/Downloads/ThAmCoFrontEnd/bin/Debug/net8.0/Auth0.AspNetCore.Authentication.dll
+/Users/tom/Downloads/ThAmCoFrontEnd/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+/Users/tom/Downloads/ThAmCoFrontEnd/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/tom/Downloads/ThAmCoFrontEnd/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/tom/Downloads/ThAmCoFrontEnd/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/tom/Downloads/ThAmCoFrontEnd/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/tom/Downloads/ThAmCoFrontEnd/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/tom/Downloads/ThAmCoFrontEnd/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/tom/Downloads/ThAmCoFrontEnd/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/tom/Downloads/ThAmCoFrontEnd/obj/Debug/net8.0/ThAmCoFrontEnd.csproj.AssemblyReference.cache
+/Users/tom/Downloads/ThAmCoFrontEnd/obj/Debug/net8.0/ThAmCoFr.7B5CA6EC.Up2Date

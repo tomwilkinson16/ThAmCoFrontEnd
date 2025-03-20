@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "nk6I+FUmIiQ=",
+  "dgSpecHash": "JPLh/XQ6IfM=",
   "success": true,
   "projectFilePath": "/Users/tom/Downloads/ThAmCoFrontEnd/ThAmCoFrontEnd.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/tom/.nuget/packages/auth0.aspnetcore.authentication/1.4.1/auth0.aspnetcore.authentication.1.4.1.nupkg.sha512",
+    "/Users/tom/.nuget/packages/microsoft.aspnetcore.authentication.openidconnect/8.0.1/microsoft.aspnetcore.authentication.openidconnect.8.0.1.nupkg.sha512",
+    "/Users/tom/.nuget/packages/microsoft.identitymodel.abstractions/7.1.2/microsoft.identitymodel.abstractions.7.1.2.nupkg.sha512",
+    "/Users/tom/.nuget/packages/microsoft.identitymodel.jsonwebtokens/7.1.2/microsoft.identitymodel.jsonwebtokens.7.1.2.nupkg.sha512",
+    "/Users/tom/.nuget/packages/microsoft.identitymodel.logging/7.1.2/microsoft.identitymodel.logging.7.1.2.nupkg.sha512",
+    "/Users/tom/.nuget/packages/microsoft.identitymodel.protocols/7.1.2/microsoft.identitymodel.protocols.7.1.2.nupkg.sha512",
+    "/Users/tom/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/7.1.2/microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
+    "/Users/tom/.nuget/packages/microsoft.identitymodel.tokens/7.1.2/microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
+    "/Users/tom/.nuget/packages/system.identitymodel.tokens.jwt/7.1.2/system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
+    "/Users/tom/.nuget/packages/system.text.encodings.web/4.7.2/system.text.encodings.web.4.7.2.nupkg.sha512"
+  ],
   "logs": []
 }
