@@ -10,6 +10,7 @@ builder.Services.AddControllersWithViews();
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddScoped<ILowestPriceService, LowestPriceServiceFake>();
+    
 }
 else
 {
