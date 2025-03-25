@@ -30,6 +30,10 @@
                     <td>@product.Name</td>
                     <td>@product.Price</td>
                     <td>@product.Description</td>
+                    @if (User.Identity != null && User.Identity.IsAuthenticated)
+                    {
+                        <td>@product.StockLevel</td>
+                    }
                 </tr>
             }
         </tbody>
