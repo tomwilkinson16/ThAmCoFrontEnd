@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ThAmCoFrontEnd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8dd70f4f150994d8ac2b7d3789b4789999e7545")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6844e2dadb3a04dfbe820b0a7c8046802c85c1cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("ThAmCoFrontEnd")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ThAmCoFrontEnd")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

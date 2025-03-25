@@ -73,7 +73,7 @@ namespace ThAmCo.CheapestProduct.Services.CheapestProducts
             return lowestProductList;
         }
 
-        public async Task<LowestProductDto> GetLowestProductAsync(int id)
+        async Task<LowestProductDto> GetLowestProductAsync(int id)
         {
             var totalClient = _httpClientFactory.CreateClient();
             totalClient.BaseAddress = new Uri(_configuration["TokenAuthority"]);
@@ -106,6 +106,12 @@ namespace ThAmCo.CheapestProduct.Services.CheapestProducts
             
             List<LowestProductDto> lowestProductList = new List<LowestProductDto>();
 
-            return products.FirstOrDefault(p => p.Id == id);        }
+            return products.FirstOrDefault(p => p.Id == id);
+        }
+
+        Task<LowestProductDto> ILowestPriceService.GetLowestProductAsync(int id)
+        {
+            return GetLowestProductAsync(id);
+        }
     }
 }

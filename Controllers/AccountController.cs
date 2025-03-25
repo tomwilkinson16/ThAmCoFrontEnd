@@ -1,5 +1,7 @@
+using Auth0.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -7,21 +9,30 @@ namespace ThAmCoFrontEnd.Controllers
 {
     public class AccountController : Controller
     {
-        public IActionResult Login(string returnUrl = "/")
+        public async Task Login(string returnUrl = "/")
         {
-            var authenticationProperties = new AuthenticationProperties { RedirectUri = returnUrl };
-            return Challenge(authenticationProperties, "Auth0");
+            var authenticationProperties = new
+                LoginAuthenticationPropertiesBuilder()
+                    .WithRedirectUri(returnUrl)
+                    .Build();
+
+            await HttpContext.ChallengeAsync(
+                Auth0Constants.AuthenticationScheme, authenticationProperties);
         }
 
-        public async Task<IActionResult> Logout()
+        [Authorize]
+        public async Task Logout()
         {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            await HttpContext.SignOutAsync("Auth0", new AuthenticationProperties
-            {
-                RedirectUri = Url.Action("Index", "Home")
-            });
+            var authenticationProperties = new
+                LogoutAuthenticationPropertiesBuilder()
+                    .WithRedirectUri(Url.Action("Index", "Home"))
+                    .Build();
 
-            return RedirectToAction("Index", "Home");
+            await HttpContext.SignOutAsync(
+                Auth0Constants.AuthenticationScheme, authenticationProperties);
+
+            await HttpContext.SignOutAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme);
         }
     }
 }
