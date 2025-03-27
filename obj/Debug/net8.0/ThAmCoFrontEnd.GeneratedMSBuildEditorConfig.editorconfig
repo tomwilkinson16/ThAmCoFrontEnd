@@ -18,8 +18,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/tom/Downloads/ThAmCoFrontEnd
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/tom/Downloads/ThAmCoFrontEnd/Views/Account/editprofile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9lZGl0cHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/tom/Downloads/ThAmCoFrontEnd/Views/Account/login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9sb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tom/Downloads/ThAmCoFrontEnd/Views/Account/profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9wcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tom/Downloads/ThAmCoFrontEnd/Views/Account/registerdetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9yZWdpc3RlcmRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tom/Downloads/ThAmCoFrontEnd/Views/Basket/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFza2V0L0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/tom/Downloads/ThAmCoFrontEnd/Views/Home/Index.cshtml]
@@ -28,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/tom/Downloads/ThAmCoFrontEnd/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tom/Downloads/ThAmCoFrontEnd/Views/Home/_productlist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9fcHJvZHVjdGxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/tom/Downloads/ThAmCoFrontEnd/Views/Product/Index.cshtml]

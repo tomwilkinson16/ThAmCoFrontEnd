@@ -1,0 +1,21 @@
+@model IEnumerable<ThAmCo.CheapestProducts.Services.CheapestProduct.LowestProductDto>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img style="max-width: 300px; max-height: 300px;" src="@product.ImageUrl" class="card-img-top d-block mx-auto" alt="@product.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">Price: @product.Price</p>
+                    <p class="card-text">@product.Description</p>
+                    @if (User.Identity != null && User.Identity.IsAuthenticated)
+                    {
+                        <p class="card-text">Stock Level: @product.StockLevel</p>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

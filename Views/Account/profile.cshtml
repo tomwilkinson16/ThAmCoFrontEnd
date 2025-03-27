@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "My Profile";
+}
+
+<h1>Welcome, @ViewBag.Name!</h1>
+
+<div class="card">
+    <div class="card-body">
+        <p class="card-text">Email: @ViewBag.Email</p>
+        <p class="card-text">Account Balance: £@ViewBag.AccountBalance</p>
+        <p class="card-text">Delivery Address: @ViewBag.Address</p>
+        <p class="card-text">Telephone Number: @ViewBag.PhoneNumber</p>
+        <a class="btn btn-primary" asp-controller="Account" asp-action="EditProfile">Edit Profile</a>
+    </div>
+</div>

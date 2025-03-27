@@ -1,0 +1,67 @@
+@{
+    ViewData["Title"] = "My Basket";
+    var basketItems = ViewBag.BasketItems as List<ThAmCoFrontEnd.Controllers.BasketItem>;
+    var totalPrice = ViewBag.TotalPrice;
+}
+
+<h1>My Basket</h1>
+
+@if (basketItems != null && basketItems.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in basketItems)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>£@item.Price</td>
+                    <td>£@(item.Quantity * item.Price)</td>
+                    <td>
+                        <button class="btn btn-danger remove-from-basket" data-product-id="@item.ProductId">Remove</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h3>Total Price: £@totalPrice</h3>
+}
+else
+{
+    <p>Your basket is empty.</p>
+}
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.remove-from-basket').on('click', function () {
+                var productId = $(this).data('product-id');
+
+                $.ajax({
+                    url: '@Url.Action("RemoveFromBasket", "Basket")',
+                    type: 'POST',
+                    data: { productId: productId },
+                    success: function (response) {
+                        if (response.success) {
+                            location.reload(); // Reload the page to update the basket
+                        } else {
+                            alert('Failed to remove product from basket.');
+                        }
+                    },
+                    error: function () {
+                        alert('An error occurred while removing the product from the basket.');
+                    }
+                });
+            });
+        });
+    </script>
+}
