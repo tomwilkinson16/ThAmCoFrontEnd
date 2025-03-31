@@ -2,6 +2,8 @@
 using Auth0.AspNetCore.Authentication;
 using ThAmCo.CheapestProduct.Services.CheapestProducts;
 using ThAmCo.CheapestProducts.Services.CheapestProduct;
+using Polly.Extensions.Http;
+using Polly;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,10 +34,13 @@ if (builder.Environment.IsDevelopment())
 else
 {
     builder.Services.AddHttpClient<ILowestPriceService, LowestProducts>(client =>
-    {
-        client.BaseAddress = new Uri(builder.Configuration["LowestProducts:Uri"]);
-    });
+        {
+            client.BaseAddress = new Uri(builder.Configuration["LowestProducts:Uri"]);
+        })
+            .AddPolicyHandler(GetRetryPolicy())
+            .AddPolicyHandler(GetCircuitBreakerPolicy());
 }
+
 
 var app = builder.Build();
 
@@ -61,3 +66,21 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+
+
+AsyncPolicy<HttpResponseMessage> GetRetryPolicy()
+{
+    return HttpPolicyExtensions
+        .HandleTransientHttpError()
+        .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.NotFound)
+        .WaitAndRetryAsync(5, retryAttempt =>
+            TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
+}
+
+IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy()
+{
+    return HttpPolicyExtensions
+        .HandleTransientHttpError()
+        .CircuitBreakerAsync(5, TimeSpan.FromSeconds(30));
+}
