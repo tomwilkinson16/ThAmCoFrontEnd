@@ -25,11 +25,8 @@ builder.Services.AddAuth0WebAppAuthentication(options =>
 
 if (builder.Environment.IsDevelopment())
 {
-    // builder.Services.AddScoped<ILowestPriceService, LowestPriceServiceFake>();
-    builder.Services.AddHttpClient<ILowestPriceService, LowestProducts>(client =>
-    {
-        client.BaseAddress = new Uri(builder.Configuration["LowestProducts:Uri"]);
-    });
+    builder.Services.AddScoped<ILowestPriceService, LowestPriceServiceFake>();
+    
 }
 else
 {

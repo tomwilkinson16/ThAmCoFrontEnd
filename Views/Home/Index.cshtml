@@ -4,33 +4,25 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="d-flex justify-content-end">
-    <h2>
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#filterForm" aria-expanded="false" aria-controls="filterForm">
-            Filter Products
-        </button>
-    </h2>
-</div>
-<div class="collapse" id="filterForm">
-    <div class="row">
-        <div class="col-md-12">
-            <form id="filterForm">
-                <div class="form-group">
-                    <label for="SearchQuery">Search</label>
-                    <input type="text" id="SearchQuery" name="searchQuery" class="form-control" placeholder="Enter product name" />
-                </div>
-                <div class="form-group">
-                    <label for="MinPrice">Min Price</label>
-                    <input type="number" id="MinPrice" name="minPrice" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <label for="MaxPrice">Max Price</label>
-                    <input type="number" id="MaxPrice" name="maxPrice" class="form-control" />
-                </div>
-                <br />
-                <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Remove Filter</a>
-            </form>
-        </div>
+<div class="row">
+    <div class="col-md-12">
+        <h2>Filter Products</h2>
+        <form id="filterForm">
+            <div class="form-group">
+                <label for="SearchQuery">Search</label>
+                <input type="text" id="SearchQuery" name="searchQuery" class="form-control" placeholder="Enter product name" />
+            </div>
+            <div class="form-group">
+                <label for="MinPrice">Min Price</label>
+                <input type="number" id="MinPrice" name="minPrice" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="MaxPrice">Max Price</label>
+                <input type="number" id="MaxPrice" name="maxPrice" class="form-control" />
+            </div>
+            <br />
+            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Remove Filter</a>
+        </form>
     </div>
 </div>
 
